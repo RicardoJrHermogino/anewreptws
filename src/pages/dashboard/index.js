@@ -204,7 +204,7 @@ const Dashboard = () => {
         {/* Display User ID Temporarily */}
         <Grid item xs={12}>
           <Typography variant="body2" color="red">
-            User ID: <strong>{userId}</strong> {/* Display the User ID */}
+            User ID: <strong>{userId}</strong> 
           </Typography>
         </Grid>
 

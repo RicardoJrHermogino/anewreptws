@@ -6,7 +6,6 @@ import {
 import Navbar from '../../../components/navbar';
 import getOrCreateUUID from '@/utils/uuid'; // Import the UUID utility
 import { useRouter } from 'next/router'; // Import useRouter
-import TaskList from './TaskList';
 
 const ScheduleTask = () => {
   
@@ -134,6 +133,7 @@ const ScheduleTask = () => {
       setSelectedTime('');
       setSelectedLocation('');
       setSelectedCoordinates({});
+      
     } catch (error) {
       console.error("Error scheduling task:", error);
       setError(error.message);
@@ -235,27 +235,6 @@ const ScheduleTask = () => {
             </form>
           )}
 
-          
-
-          {/* Display the user-specific tasks here */}
-          <Box sx={{ mt: 4 }}>
-            <Typography variant="h6" align="center" color="black">Your Scheduled Tasks</Typography>
-            <Grid container spacing={2} mt={2}>
-              {userTasks.map((task) => (
-                <Grid item xs={12} sm={6} md={4} key={task.taskID}>
-                  <Card>
-                    <CardContent>
-                      <Typography variant="h6">{task.task}</Typography>
-                      <Typography variant="body2" color="textSecondary">{`Date: ${task.date}`}</Typography>
-                      <Typography variant="body2" color="textSecondary">{`Time: ${task.time}`}</Typography>
-                      <Typography variant="body2" color="textSecondary">{`Location: ${task.location}`}</Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-                
-              ))}
-            </Grid>
-          </Box>
         </Box>
       </Container>
     </>
